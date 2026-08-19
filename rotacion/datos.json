@@ -3,8 +3,8 @@
   "anio": 2026,
   "corte": 7,
   "filiales": [
-    { "id": "corp",  "nombre": "Corporate", "inicial": 0 },
-    { "id": "latam", "nombre": "LATAM",     "inicial": 0 }
+    { "id": "corp",  "nombre": "Corporate", "inicial": 24 },
+    { "id": "latam", "nombre": "LATAM",     "inicial": 29 }
   ],
   "movs": [
     { "tipo": "baja", "fecha": "2026-01-31", "filial": "latam", "clase": "voluntaria", "ingreso": "2023-09-10" },
