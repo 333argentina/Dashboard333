@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>333 Dashboard · Herramientas internas</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #1F6DB1;
+    --azul-oscuro: #155090;
+    --azul-medio: #2D85D1;
+    --azul-claro: #D1E3F6;
+    --azul-bg: #EEF4FB;
+    --naranja: #E87722;
+    --naranja-oscuro: #C85F10;
+    --magenta: #E50066;
+    --gris: #53565A;
+    --gris-claro: #8b8e93;
+    --blanco: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #EEF4FB 0%, #D1E3F6 100%);
+    min-height: 100vh;
+    color: var(--gris);
+  }
+
+  /* ============ HEADER ============ */
+  header {
+    background: linear-gradient(100deg, #155090, #1F6DB1 55%, #2580CC);
+    border-radius: 0 0 24px 24px;
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    box-shadow: 0 6px 24px rgba(15, 50, 100, 0.28);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .brand-logo {
+    width: 52px;
+    height: 52px;
+    background: var(--blanco);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--azul);
+    letter-spacing: -1px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  .brand-text { color: #fff; line-height: 1.2; }
+  .brand-text .t1 { font-weight: 800; font-size: 20px; }
+  .brand-text .t2 { font-weight: 400; font-size: 12px; opacity: 0.85; }
+
+  .header-meta {
+    color: #fff;
+    text-align: right;
+  }
+  .header-meta .label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    opacity: 0.7;
+  }
+  .header-meta .value {
+    font-size: 15px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ============ INTRO ============ */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+  }
+
+  .intro {
+    margin: 32px 0 24px;
+    text-align: center;
+  }
+  .intro h1 {
+    color: var(--azul);
+    font-weight: 900;
+    font-size: clamp(26px, 3.5vw, 36px);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .intro p {
+    font-size: 14px;
+    color: var(--gris-claro);
+    font-weight: 500;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ============ GRID ============ */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  /* ============ CARD ============ */
+  .card {
+    background: var(--blanco);
+    border-radius: 20px;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(15, 50, 100, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(15, 50, 100, 0.20);
+  }
+  .card:hover .card-arrow { transform: translateX(6px); }
+  .card:hover .card-visual { transform: scale(1.05); }
+
+  .card-header {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-visual {
+    transition: transform 0.4s ease;
+  }
+
+  /* Pirámide card header */
+  .card.piramide .card-header {
+    background: linear-gradient(135deg, #1F6DB1 0%, #155090 100%);
+  }
+  .card.piramide svg .layer { transition: opacity 0.3s; }
+
+  /* World Clock card header */
+  .card.clock .card-header {
+    background: linear-gradient(170deg, #091e30 0%, #050f1a 100%);
+  }
+
+  .card-body {
+    padding: 20px 22px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+  .card.piramide .card-tag {
+    background: #E8F1FA;
+    color: var(--azul);
+  }
+  .card.clock .card-tag {
+    background: #FCEEDD;
+    color: var(--naranja-oscuro);
+  }
+
+  .card-title {
+    font-weight: 800;
+    font-size: 19px;
+    color: var(--azul);
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+
+  .card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid #EAF0F6;
+  }
+  .card-cta-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--naranja);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .card-arrow {
+    color: var(--naranja);
+    font-size: 18px;
+    font-weight: 900;
+    transition: transform 0.25s ease;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(31, 109, 177, 0.12);
+    font-size: 11px;
+    color: var(--gris-claro);
+    font-weight: 500;
+  }
+  footer strong { color: var(--azul); font-weight: 700; }
+
+  @media (max-width: 540px) {
+    header { padding: 18px 20px; }
+    .brand-text .t1 { font-size: 17px; }
+    .header-meta .value { font-size: 13px; }
+    .intro { margin: 24px 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-logo">333</div>
+    <div class="brand-text">
+      <div class="t1">333 Corporate</div>
+      <div class="t2">Dashboard de herramientas internas</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="label">Hoy</div>
+    <div class="value" id="todayDate">—</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <section class="intro">
+    <h1>Herramientas 333</h1>
+    <p>Accedé a las herramientas internas. Hacé click en cualquier tarjeta para abrirla.</p>
+  </section>
+
+  <section class="grid">
+
+    <!-- CARD 1: Pirámide / Modelo de Jerarquías -->
+    <a href="piramide.html" class="card piramide" target="_blank" rel="noopener">
+      <div class="card-header">
+        <svg class="card-visual" viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg" width="200" height="110">
+          <!-- Pirámide simplificada con 5 capas -->
+          <polygon points="100,12 122,32 78,32" fill="#FFFFFF" opacity="0.95" class="layer"/>
+          <polygon points="78,34 122,34 138,52 62,52" fill="#FDE3CE" opacity="0.92" class="layer"/>
+          <polygon points="62,54 138,54 154,72 46,72" fill="#F5A35C" opacity="0.92" class="layer"/>
+          <polygon points="46,74 154,74 170,92 30,92" fill="#E87722" opacity="0.92" class="layer"/>
+          <polygon points="30,94 170,94 185,108 15,108" fill="#C85F10" opacity="0.92" class="layer"/>
+          <!-- Anillos decorativos -->
+          <circle cx="100" cy="22" r="3" fill="#E87722"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Modelo organizacional</span>
+        <h2 class="card-title">Modelo de Jerarquías 333</h2>
+        <p class="card-desc">Pirámide interactiva con los niveles del modelo de jerarquías. Explorá cada capa, sus responsabilidades y cómo se conectan.</p>
+        <div class="card-cta">
+          <span class="card-cta-text">Abrir herramienta</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 2: World Clock -->
+    <a href="worldclock.html" class="card clock" target="_blank" rel="noopener">
+      <div class="card-header">
+        <svg class="card-visual" viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg" width="200" height="110">
+          <!-- Globo terráqueo estilizado -->
+          <circle cx="100" cy="55" r="42" fill="none" stroke="#3b8dbf" stroke-width="1.5" opacity="0.6"/>
+          <ellipse cx="100" cy="55" rx="42" ry="14" fill="none" stroke="#3b8dbf" stroke-width="1" opacity="0.5"/>
+          <ellipse cx="100" cy="55" rx="14" ry="42" fill="none" stroke="#3b8dbf" stroke-width="1" opacity="0.5"/>
+          <ellipse cx="100" cy="55" rx="28" ry="42" fill="none" stroke="#3b8dbf" stroke-width="0.8" opacity="0.4"/>
+          <line x1="58" y1="55" x2="142" y2="55" stroke="#3b8dbf" stroke-width="1" opacity="0.5"/>
+
+          <!-- Pines de ciudades -->
+          <circle cx="78" cy="48" r="4" fill="#E87722" stroke="#fff" stroke-width="1.5"/>
+          <circle cx="122" cy="58" r="4" fill="#E87722" stroke="#fff" stroke-width="1.5"/>
+          <circle cx="105" cy="38" r="4" fill="#E87722" stroke="#fff" stroke-width="1.5"/>
+          <circle cx="90" cy="70" r="4" fill="#E87722" stroke="#fff" stroke-width="1.5"/>
+          <circle cx="130" cy="42" r="5" fill="#fff" stroke="#E87722" stroke-width="2"/>
+
+          <!-- Reloj -->
+          <text x="100" y="105" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="9" fill="#E87722">WORLD TIME</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Operaciones globales</span>
+        <h2 class="card-title">333 World Clock</h2>
+        <p class="card-desc">Reloj mundial con mapa interactivo. Visualizá la hora en las oficinas de 333 y coordiná reuniones entre LATAM, España y el resto del mundo.</p>
+        <div class="card-cta">
+          <span class="card-cta-text">Abrir herramienta</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <footer>
+    <strong>333 Corporate</strong> · Dashboard de herramientas internas
+  </footer>
+
+</div>
+
+<script>
+  // Fecha de hoy en formato rioplatense
+  const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  const dias = ['dom','lun','mar','mié','jue','vie','sáb'];
+  function updateDate() {
+    const now = new Date();
+    const d = dias[now.getDay()];
+    const dd = String(now.getDate()).padStart(2,'0');
+    const m = meses[now.getMonth()];
+    const y = now.getFullYear();
+    const hh = String(now.getHours()).padStart(2,'0');
+    const mm = String(now.getMinutes()).padStart(2,'0');
+    document.getElementById('todayDate').textContent = `${d} ${dd} ${m} · ${hh}:${mm}`;
+  }
+  updateDate();
+  setInterval(updateDate, 30000);
+</script>
+
+</body>
+</html>
