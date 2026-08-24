@@ -1,0 +1,122 @@
+{
+  "actualizado": "2026-08-24",
+  "anio": 2026,
+  "corte": 7,
+  "filiales": [
+    {
+      "id": "mt08xfyxyxdee",
+      "nombre": "Corporate",
+      "inicial": 27
+    },
+    {
+      "id": "mt08xfyx90nzf",
+      "nombre": "LATAM",
+      "inicial": 31
+    }
+  ],
+  "voluntarias": {
+    "total": 3,
+    "porFilial": {
+      "mt08xfyxyxdee": 0,
+      "mt08xfyx90nzf": 3
+    }
+  },
+  "movs": [
+    {
+      "tipo": "baja",
+      "fecha": "2026-05-21",
+      "filial": "mt08xfyxyxdee",
+      "nombre": "Eduardo Mazaira",
+      "puesto": "Instructor Academy",
+      "ingreso": "2021-11-10"
+    },
+    {
+      "tipo": "baja",
+      "fecha": "2026-01-31",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Martin Gonzalez",
+      "puesto": "Mk y Com",
+      "ingreso": "2023-09-10"
+    },
+    {
+      "tipo": "alta",
+      "fecha": "2026-02-12",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Nazly Montaño",
+      "puesto": "Especialista en Mk y Com",
+      "ingreso": ""
+    },
+    {
+      "tipo": "alta",
+      "fecha": "2026-02-12",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Susana Cadavid",
+      "puesto": "Especialista Mk y Com",
+      "ingreso": ""
+    },
+    {
+      "tipo": "baja",
+      "fecha": "2026-07-29",
+      "filial": "mt08xfyxyxdee",
+      "nombre": "Anna Fernandez",
+      "puesto": "Especialista Comercial",
+      "ingreso": "2023-11-20"
+    },
+    {
+      "tipo": "baja",
+      "fecha": "2026-08-05",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Bruno Gianolio",
+      "puesto": "Analista Administración",
+      "ingreso": "2025-02-17"
+    },
+    {
+      "tipo": "alta",
+      "fecha": "2026-08-18",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Karol Villalobos",
+      "puesto": "Especialista MK y Com Latam",
+      "ingreso": ""
+    },
+    {
+      "tipo": "alta",
+      "fecha": "2026-08-11",
+      "filial": "mt08xfyxyxdee",
+      "nombre": "Delfina Saenz",
+      "puesto": "Especialista MK y Com Corporate",
+      "ingreso": ""
+    },
+    {
+      "tipo": "alta",
+      "fecha": "2026-03-06",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Nicole Fava",
+      "puesto": "Mk & Com Brasil",
+      "ingreso": ""
+    },
+    {
+      "tipo": "baja",
+      "fecha": "2026-05-17",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Nicole Fava",
+      "puesto": "Mk & Com brasil",
+      "ingreso": "2026-03-06"
+    },
+    {
+      "tipo": "alta",
+      "fecha": "2026-02-05",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Solange Orellana",
+      "puesto": "Pasante Aves Chile",
+      "ingreso": ""
+    },
+    {
+      "tipo": "alta",
+      "fecha": "2026-07-01",
+      "filial": "mt08xfyx90nzf",
+      "nombre": "Pamela Gonzalez",
+      "puesto": "Brand Manager Perú",
+      "ingreso": ""
+    }
+  ]
+}
